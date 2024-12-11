@@ -14,7 +14,7 @@ while(quit){
     const num1 = prompt("entre num1 : ");
     const p = prompt(`parammeter : `);
 
-    switch (p){
+            switch (p){
         case "+":
             var num2 = prompt("entre num2 : ");
             const sum =Number(num1) + Number(num2);
@@ -50,6 +50,9 @@ while(quit){
             quit = 1;
             break
         case "<":
+            if(num1 < 0){
+                console.log(`error`);
+            }
             const squ = Math.sqrt(num1);
             console.log(`resolt is : ${squ}`);
             quit = 1;
