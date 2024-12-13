@@ -9,39 +9,34 @@ while(quit){
     console.log(`=           Power (^)            =`);
     console.log(`=        Square root (<)         =`);
     console.log(`=         Factorial (!)          =`);
+    console.log(`=            quit (0)            =`);
     console.log(`==================================`);
-
-    const num1 = prompt("entre num1 : ");
+    const num1 = Number(prompt("entre num1 : "));
     const p = prompt(`parammeter : `);
-    if(p ==! "!" || p ==! "<"){
-        const num2 = prompt("entre num2 : ");
+    var num2
+    if(p == '+' || p == '-' || p == '*' || p == '/' || p == '^'){
+        num2 = Number(prompt("entre num2 : "));
     }
-
-
             switch (p){
         case "+":
-            const sum = Number(num1) + Number(num2);
+            const sum = num1 + num2;
             console.log(`resolt is : ${sum}`);
-            quit = 1;
             break
         case "-":
-            const min = Number(num1) - Number(num2);
+            const min = num1 - num2;
             console.log(`resolt is : ${min}`);
-            quit = 1;
             break
         case "/":
                 if(num1 == 0 || num2 == 0){
                 console.log('error');
                 break;
-            }
-            const dev = Number(num1) / Number(num2);
+                }
+            const dev = num1 / num2;
             console.log(`resolt is : ${dev}`);
-            quit = 1;
-            break
+            break;
         case "*":
-            const f = Number(num1) * Number(num2);
+            const f = num1 * num2;
             console.log(`resolt is : ${f}`);
-            quit = 1;
             break
         case "^":
             const pui = Math.pow(num1, num2);
@@ -51,6 +46,9 @@ while(quit){
         case "<":
             if(num1 < 0){
                 console.log(`error`);
+            }
+            if (num1 == p){
+            
             }
             const squ = Math.sqrt(num1);
             console.log(`resolt is : ${squ}`);
@@ -72,8 +70,10 @@ while(quit){
             quit = 1;
             break;
         default:
+            if(p == 0){
+                quit = 0;
+                break;
+            }
             console.log(`false parameter`);
-        
-        quit = 0;
     }
 }
