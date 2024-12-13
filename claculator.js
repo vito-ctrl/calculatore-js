@@ -1,7 +1,7 @@
 const prompt = require('prompt-sync')();
 let quit = 1;
 while(quit){
-    console.log(`=============menu=================`);
+    console.log(`============ menu ================`);
     console.log(`=          Addition (+)          =`);
     console.log(`=         Subtraction (-)        =`);
     console.log(`=       Multiplication (/)       =`);
@@ -13,24 +13,25 @@ while(quit){
 
     const num1 = prompt("entre num1 : ");
     const p = prompt(`parammeter : `);
+    if(p ==! "!" || p ==! "<"){
+        const num2 = prompt("entre num2 : ");
+    }
+
 
             switch (p){
         case "+":
-            var num2 = prompt("entre num2 : ");
-            const sum =Number(num1) + Number(num2);
+            const sum = Number(num1) + Number(num2);
             console.log(`resolt is : ${sum}`);
             quit = 1;
             break
         case "-":
-            var num2 = prompt("entre num2 : ");
             const min = Number(num1) - Number(num2);
             console.log(`resolt is : ${min}`);
             quit = 1;
             break
         case "/":
-            var num2 = prompt("entre num2 : ");
-            if(num1 == 0 || num2 == 0){
-                console.log(`wach nta mklkh baghi t9ssm 3la 0 `);
+                if(num1 == 0 || num2 == 0){
+                console.log('error');
                 break;
             }
             const dev = Number(num1) / Number(num2);
@@ -38,13 +39,11 @@ while(quit){
             quit = 1;
             break
         case "*":
-            var num2 = prompt("entre num2 : ");
             const f = Number(num1) * Number(num2);
             console.log(`resolt is : ${f}`);
             quit = 1;
             break
         case "^":
-            var num2 = prompt("entre num2 : ");
             const pui = Math.pow(num1, num2);
             console.log(`resolt is : ${pui}`);
             quit = 1;
@@ -62,6 +61,7 @@ while(quit){
                 console.log(`factorial can not be negative`);
             }
             if(num1 == 1 || num1 == 0){
+                console.log(`factorial of ${num1} is 1`);
                 break;
             }
             let resolt = 1;
